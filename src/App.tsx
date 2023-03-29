@@ -1,9 +1,10 @@
-import { InventoryCard } from "./components/Inventory_Components/Cards";
+
+import InventoryGridList from "./components/Inventory_Components/InventoryGridList";
 
 function App() {
   return (
     <>
-      <InventoryCard />
+      <InventoryGridList />
     </>
   );
 }

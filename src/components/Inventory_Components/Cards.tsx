@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { inventoryCardProps } from "./inventoryTypes";
 
 export const InventoryCard = ({
@@ -7,31 +8,35 @@ export const InventoryCard = ({
   rating,
   propertyName,
   desc,
+  id,
+  property,
+  handleSelectProperty,
 }: inventoryCardProps) => {
-  const image =
-    "https://images.unsplash.com/photo-1592595896551-12b371d546d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60";
+  
 
   return (
     <>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={image} alt="Sunset in the mountains" />
+        <img className="w-full" src={img} alt="Sunset in the mountains" />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-          <p className="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
+          <div className="font-bold text-xl mb-2">{propertyName}</div>
+          <p className="text-gray-700 text-base">{desc}</p>
         </div>
         <div className="px-6 pt-4 pb-2">
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #photography
+            $ {price}
           </span>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #travel
+            {location}
           </span>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #winter
+            {rating}
+          </span>
+          <span
+            onClick={() => handleSelectProperty(property)}
+            className="inline-block bg-sky-500 hover:bg-sky-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+          >
+            Choose
           </span>
         </div>
       </div>
@@ -39,6 +44,4 @@ export const InventoryCard = ({
   );
 };
 
-<span>
-  
-</span>;
+<span></span>;
