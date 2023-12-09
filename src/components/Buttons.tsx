@@ -3,18 +3,18 @@ import { useMyName, useKeyPress } from "../customHooks";
 
 type buttonProps = {
   title: String;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  color?: String;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  type?:"button"|"submit"|"reset";
+  className:string;
 };
 
-export const CommonButton = ({ title, color, onClick }: buttonProps) => {
-  const { name } = useMyName();
-  const pressed = useKeyPress("w");
+export const CommonButton = ({ title,  onClick,className,type }: buttonProps) => {
+  
 
   return (
     <>
-      <button>{name}</button>
-      {pressed && <span>p pressed</span>}
+      <button onClick={onClick} className={className} type={type} >{title}</button>
+     
     </>
   );
 };
