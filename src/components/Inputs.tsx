@@ -2,7 +2,7 @@ import React from "react";
 type InputProps = {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   value?: string;
-  key?: string;
+  keyType?: string;
   name?: string;
   type: string;
   className: string;
@@ -14,7 +14,7 @@ export const CommonInputs = ({
   onChange,
   value,
   name,
-  key,
+  keyType,
   type,
   className,
   placeholder,
@@ -27,7 +27,7 @@ export const CommonInputs = ({
         value={value}
         onChange={onChange}
         name={name}
-        key={key}
+        key={keyType}
         ref={ref}
         className={className}
         placeholder={placeholder}
