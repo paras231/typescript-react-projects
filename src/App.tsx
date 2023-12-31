@@ -25,6 +25,12 @@ function App() {
   }
 
 
+  // add this function to check if git stash restores the changes which were hidden by git stash command-:
+
+  function check(){
+    
+  }
+
   const handlePageNum = ()=>{
       setPageNumber((num)=>num+1);
   }
