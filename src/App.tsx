@@ -1,5 +1,6 @@
 import InventoryGridList from "./components/Inventory_Components/InventoryGridList";
 import { useState } from "react";
+import PageLayout from "./components/PageLayout";
 import FormWrapper from "./components/FormWrapper";
 import { CommonButton } from "./components/Buttons";
 import { CommonInputs } from "./components/Inputs";
@@ -8,6 +9,7 @@ function App() {
     userName: "",
     email: "",
   });
+  const [pageNumber,setPageNumber] = useState(0);
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
@@ -22,13 +24,20 @@ function App() {
     console.log("formSubmitHandler  2");
   }
 
+
+  const handlePageNum = ()=>{
+      setPageNumber((num)=>num+1);
+  }
   return (
     <>
       {/* <InventoryGridList /> */}
-      <FormWrapper
+      {/* <FormWrapper
         key="form_1"
         onSubmit={formSubmitHandler}
-        className="flex justify-center gap-40 items-center mt-40"
+        className={{
+          "form":"flex justify-center gap-40 items-center mt-40 bg-blue-500",
+          "button":"rounded-md bg-slate-400"
+        }}
       >
         <CommonInputs
           placeholder="type your name"
@@ -50,9 +59,9 @@ function App() {
           title={"Submit"}
           className="bg-red-700 border-none outline-none rounded-md p-2 text-white"
         />
-      </FormWrapper>
+      </FormWrapper> */}
 
-      <div>
+      {/* <div>
         <FormWrapper
           onSubmit={sbmtHandler2}
           key="form_2"
@@ -69,7 +78,21 @@ function App() {
             type="submit"
           />
         </FormWrapper>
-      </div>
+      </div> */}
+      <PageLayout pageNumber={pageNumber} className={``} keyType={"page-1"}>
+        <section>
+        
+<h1>Page 1 with layout</h1>
+          <div>
+            <CommonButton onClick={handlePageNum} title={"Click me"} type="button" className={"bg-purple-600 text-white p-2 border-none outline-none rounded-md"}/>
+          </div>
+        </section>
+      </PageLayout>
+      <PageLayout className={``} keyType={'page-2'}>
+        <section>
+          <h1>Page 2 with layout</h1>
+        </section>
+      </PageLayout>
     </>
   );
 }

@@ -5,7 +5,7 @@ type FormProps = {
   type?: string;
   keyType?: string;
   children: React.ReactNode;
-  className: string;
+  className: any;
 };
 
 const FormWrapper = ({
@@ -17,7 +17,7 @@ const FormWrapper = ({
 }: FormProps) => {
   return (
     <>
-      <form className={className} key={keyType} onSubmit={onSubmit}>
+      <form className={className.form} key={keyType} onSubmit={onSubmit}>
         {children}
       </form>
     </>
