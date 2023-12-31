@@ -7,8 +7,10 @@ import { CommonInputs } from "./components/Inputs";
 function App() {
   const [formState, setFormState] = useState({
     userName: "",
-    email: "",
+    email: "", 
   });
+  console.log("test");
+  console.log("adding this console log to learn about git stash command");
   const [pageNumber,setPageNumber] = useState(0);
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
