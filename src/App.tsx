@@ -4,14 +4,15 @@ import PageLayout from "./components/PageLayout";
 import FormWrapper from "./components/FormWrapper";
 import { CommonButton } from "./components/Buttons";
 import { CommonInputs } from "./components/Inputs";
+import Statehandlers from "./components/Statehandlers";
 function App() {
   const [formState, setFormState] = useState({
     userName: "",
-    email: "", 
+    email: "",
   });
   console.log("test");
   console.log("adding this console log to learn about git stash command");
-  const [pageNumber,setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0);
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
@@ -26,16 +27,13 @@ function App() {
     console.log("formSubmitHandler  2");
   }
 
-
   // add this function to check if git stash restores the changes which were hidden by git stash command-:
 
-  function check(){
-    
-  }
+  function check() {}
 
-  const handlePageNum = ()=>{
-      setPageNumber((num)=>num+1);
-  }
+  const handlePageNum = () => {
+    setPageNumber((num) => num + 1);
+  };
   return (
     <>
       {/* <InventoryGridList /> */}
@@ -87,7 +85,7 @@ function App() {
           />
         </FormWrapper>
       </div> */}
-      <PageLayout pageNumber={pageNumber} className={``} keyType={"page-1"}>
+      {/* <PageLayout pageNumber={pageNumber} className={``} keyType={"page-1"}>
         <section>
         
 <h1>Page 1 with layout</h1>
@@ -100,7 +98,10 @@ function App() {
         <section>
           <h1>Page 2 with layout</h1>
         </section>
-      </PageLayout>
+      </PageLayout> */}
+      <div className="p-4">
+        <Statehandlers />
+      </div>
     </>
   );
 }
