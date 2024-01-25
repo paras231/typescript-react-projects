@@ -5,6 +5,7 @@ import FormWrapper from "./components/FormWrapper";
 import { CommonButton } from "./components/Buttons";
 import { CommonInputs } from "./components/Inputs";
 import Statehandlers from "./components/Statehandlers";
+import PdfCreator from "./components/PdfCreator";
 function App() {
   const [formState, setFormState] = useState({
     userName: "",
@@ -99,8 +100,9 @@ function App() {
           <h1>Page 2 with layout</h1>
         </section>
       </PageLayout> */}
-      <div className="p-4">
-        <Statehandlers />
+      <div className="p-4 flex justify-center items-center mt-20">
+        {/* <Statehandlers /> */}
+        <PdfCreator />
       </div>
     </>
   );
